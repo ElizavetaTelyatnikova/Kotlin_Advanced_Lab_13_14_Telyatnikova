@@ -66,4 +66,15 @@ fun main() {
     softBakedMenu.forEach {
         println("${it.name} - $${it.price}")
     }
+    val groupedMenu = cookies.groupBy { it.softBaked }
+    val softBakedMenuu = groupedMenu[true] ?: emptyList()
+    val crunchyMenu = groupedMenu[false] ?: emptyList()
+    println("Soft cookies:")
+    softBakedMenuu.forEach {
+        println("${it.name} - $${it.price}")
+    }
+    println("Crunchy cookies:")
+    crunchyMenu.forEach {
+        println("${it.name} - $${it.price}")
+    }
 }
